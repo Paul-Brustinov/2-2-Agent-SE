@@ -1,0 +1,22 @@
+﻿<Window x:Class="_2X2_Agent.DesktopClient.View.Task.VwSelectTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2X2_Agent.DesktopClient.View"
+        xmlns:viewModel="clr-namespace:_2X2_Agent.DesktopClient.ViewModel.Schedule"
+        xmlns:common="clr-namespace:_2X2_Agent.DesktopClient.ViewModel.Task.Common"
+        mc:Ignorable="d"
+        Title="VwSelectTask" Height="120" Width="600">
+    <Window.DataContext>
+        <common:VmSelectTask/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ComboBox Width="550" Margin="10"  SelectedItem="{Binding SelectedSchedule.ScheduleTask}" DisplayMemberPath="ShortClassName" SelectedValue="{Binding SelectedTask}" ItemsSource="{Binding Tasks}" SelectedIndex="{Binding SelectedIndex}" />
+            <DockPanel HorizontalAlignment="Center">
+                <Button Content="Next" Command="{Binding Exit}" Width="100" Margin="10"></Button>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>
